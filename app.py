@@ -27,11 +27,11 @@ def get_db():
         db.close()
 
 
-# Endpoint, um YouTube-Videos basierend auf der Sprache abzurufen
+# Endpoint, To retrieve YouTube videos based on the language.
 @app.get("/youtube/{language}")
 async def read_youtube(
     language: str = Path(
-        ..., title="The language of the content", enum=["all", "english", "german"]
+        ..., title="The language of the content", enum=["all", "english", "german", "french", "urdu"]
     ),
     db: Session = Depends(get_db),
 ):
